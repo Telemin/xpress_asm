@@ -51,7 +51,7 @@ SL1
     DECFSZ CURRCOUNT	 ; subtract one from our counter, check for zero
     GOTO LOOP		 ; loop round unless we reached zero
     
-    MOVLW LEDCOUNT       
+    MOVF LEDCOUNT,0 ; read LEDCOUNT back into w
     MOVWF CURRCOUNT	; reset CURRCOUNT to 0x0f so we can start again
     GOTO LOOP           ;start again
     
